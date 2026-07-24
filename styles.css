@@ -67,8 +67,17 @@ html { -webkit-text-size-adjust: 100%; }
 body {
   margin: 0;
   min-height: 100vh;
+  /* Fallback for browsers that ignore the image layer. */
   background: var(--bg);
-  background: linear-gradient(180deg, var(--bg-grad-top) 0%, var(--bg-grad-bottom) 100%) fixed;
+  /* Darkened background photo: a dark wash sits over the image so the
+     cards and text stay readable. Tweak the rgba alphas to taste. */
+  background:
+    linear-gradient(180deg, rgba(10, 16, 22, 0.72) 0%, rgba(10, 16, 22, 0.82) 100%),
+    url("assets/BG/background.png");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
   color: var(--text);
   font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   line-height: 1.55;
