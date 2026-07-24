@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>Game Goodness - Fun, friendly games for curious kids</title>
-  <meta name="description" content="Game Goodness makes bright, kind, easy-to-play browser games for kids aged 5 to 13. Pick a game and start playing, no downloads needed.">
-  <link rel="canonical" href="https://gamegoodness.com/">
+  <meta name="description" content="Game Goodness makes bright, kind, easy-to-play browser games for kids aged 5 to 13. An initiative of the Foundation of Goodness. Pick a game and start playing, no downloads needed.">
+  <link rel="canonical" href="https://gamegoodness.gg/">
 
   <!-- Theme colour: brand blue in light, deep slate in dark -->
   <meta name="theme-color" content="#0095D0" media="(prefers-color-scheme: light)">
@@ -15,9 +15,9 @@
   <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="Game Goodness - Fun, friendly games for curious kids">
-  <meta property="og:description" content="Bright, kind, easy-to-play browser games for kids aged 5 to 13. Pick a game and start playing.">
-  <meta property="og:url" content="https://gamegoodness.com/">
-  <meta property="og:image" content="https://gamegoodness.com/assets/og-image.png">
+  <meta property="og:description" content="Bright, kind, easy-to-play browser games for kids aged 5 to 13. An initiative of the Foundation of Goodness.">
+  <meta property="og:url" content="https://gamegoodness.gg/">
+  <meta property="og:image" content="https://gamegoodness.gg/assets/og-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="Game Goodness logo, a puzzle-piece heart in orange, teal and blue.">
@@ -27,7 +27,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Game Goodness - Fun, friendly games for curious kids">
   <meta name="twitter:description" content="Bright, kind, easy-to-play browser games for kids aged 5 to 13.">
-  <meta name="twitter:image" content="https://gamegoodness.com/assets/og-image.png">
+  <meta name="twitter:image" content="https://gamegoodness.gg/assets/og-image.png">
 
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="/styles.css">
@@ -37,17 +37,17 @@
     ============================================================
     GAME LINKS - SINGLE SOURCE OF TRUTH
     ============================================================
-    To change where a card goes, edit the data-url on that card
-    below. The whole card is one link, and the Play button lives
+    To change where a row goes, edit the data-url on that row
+    below. The whole row is one link, and the Play button lives
     inside that same link, so the two can never point to different
     places. The small script at the bottom copies each data-url
-    onto its card; the href already on each card is only a no-JS
+    onto its row; the href already on each row is only a no-JS
     fallback and is kept identical to the data-url.
 
-    Live links today (real deploys, not yet on gamegoodness.com):
-      Milo and the Good Angel  https://goodness-dialogs-game.vercel.app/
-      Text Runner              https://text-to-game-mvp.pages.dev/
-      Snake and Ladder         https://slides-and-ladders-frontend.vercel.app/
+    Live links (subdomains on gamegoodness.gg):
+      Milo and the Good Angel  https://milo7story.gamegoodness.gg/
+      Text Runner              https://textrunner.gamegoodness.gg/   (Cloudflare cert still activating)
+      Snake and Ladder         https://laddersandslides.gamegoodness.gg/
     ============================================================
   -->
 
@@ -63,62 +63,53 @@
 
     <ul class="games" role="list">
       <li>
-        <a class="card"
-           data-url="https://goodness-dialogs-game.vercel.app/"
-           href="https://goodness-dialogs-game.vercel.app/">
-          <span class="thumb">
-            <img src="/assets/game1-thumb.svg" width="640" height="400"
-                 alt="Milo and the Good Angel game thumbnail, a friendly heart on a calm teal and blue background."
-                 loading="eager" decoding="async">
+        <a class="game"
+           data-url="https://milo7story.gamegoodness.gg/"
+           href="https://milo7story.gamegoodness.gg/">
+          <span class="game-body">
+            <span class="game-title">Milo and the Good Angel</span>
+            <span class="game-desc">Help Milo make kind choices in a gentle story about empathy.</span>
           </span>
-          <span class="card-body">
-            <span class="card-title">Milo and the Good Angel</span>
-            <span class="card-desc">Help Milo make kind choices in a gentle story about empathy.</span>
-            <span class="btn">Play<span class="btn-arrow" aria-hidden="true"> &#8594;</span></span>
-          </span>
+          <span class="btn">Play<span class="btn-arrow" aria-hidden="true"> &#8594;</span></span>
         </a>
       </li>
 
       <li>
-        <a class="card"
-           data-url="https://text-to-game-mvp.pages.dev/"
-           href="https://text-to-game-mvp.pages.dev/">
-          <span class="thumb">
-            <img src="/assets/game2-thumb.svg" width="640" height="400"
-                 alt="Text Runner game thumbnail, a bright road stretching into the distance on a warm orange background."
-                 loading="lazy" decoding="async">
+        <a class="game"
+           data-url="https://textrunner.gamegoodness.gg/"
+           href="https://textrunner.gamegoodness.gg/">
+          <span class="game-body">
+            <span class="game-title">Text Runner</span>
+            <span class="game-desc">Type an idea and watch it become a bright 3D running adventure.</span>
           </span>
-          <span class="card-body">
-            <span class="card-title">Text Runner</span>
-            <span class="card-desc">Type an idea and watch it become a bright 3D running adventure.</span>
-            <span class="btn">Play<span class="btn-arrow" aria-hidden="true"> &#8594;</span></span>
-          </span>
+          <span class="btn">Play<span class="btn-arrow" aria-hidden="true"> &#8594;</span></span>
         </a>
       </li>
 
       <li>
-        <a class="card"
-           data-url="https://slides-and-ladders-frontend.vercel.app/"
-           href="https://slides-and-ladders-frontend.vercel.app/">
-          <span class="thumb">
-            <img src="/assets/game3-thumb.svg" width="640" height="400"
-                 alt="Snake and Ladder game thumbnail, a ladder and a dice on a cheerful blue background."
-                 loading="lazy" decoding="async">
+        <a class="game"
+           data-url="https://laddersandslides.gamegoodness.gg/"
+           href="https://laddersandslides.gamegoodness.gg/">
+          <span class="game-body">
+            <span class="game-title">Snake and Ladder</span>
+            <span class="game-desc">Climb ladders, dodge the slides, and race to the top.</span>
           </span>
-          <span class="card-body">
-            <span class="card-title">Snake and Ladder</span>
-            <span class="card-desc">Climb ladders, dodge the slides, and race to the top.</span>
-            <span class="btn">Play<span class="btn-arrow" aria-hidden="true"> &#8594;</span></span>
-          </span>
+          <span class="btn">Play<span class="btn-arrow" aria-hidden="true"> &#8594;</span></span>
         </a>
       </li>
     </ul>
+
+    <section class="about" aria-labelledby="about-title">
+      <h2 id="about-title" class="about-title">About the Foundation of Goodness</h2>
+      <p>Game Goodness is an initiative of the Foundation of Goodness, a non-profit that helps children grow into kind, confident and thoughtful people. The Foundation believes learning should feel safe, joyful and open to everyone, so it builds gentle, values-led experiences that put good character first, with nothing dark, scary, or for sale.</p>
+      <p>These three games are part of that work. Each one is shaped around the Foundation's Good Life Ladders idea, where small everyday choices, like showing empathy or playing fair, become the steps a child climbs while having fun. The goal is simple: that time spent on a screen can also be time spent becoming a little kinder.</p>
+    </section>
   </main>
 
   <footer class="site-footer">
-    <p class="foot-line">&copy; <span id="year">2026</span> Game Goodness. Made with care for young players.</p>
+    <p class="foot-line">&copy; <span id="year">2026</span> Game Goodness, an initiative of the Foundation of Goodness. Made with care for young players.</p>
     <p class="foot-line">
-      <a href="mailto:hello@gamegoodness.com">hello@gamegoodness.com</a>
+      <a href="mailto:hello@gamegoodness.gg">hello@gamegoodness.gg</a>
       <span class="dot" aria-hidden="true">&middot;</span>
       <a href="#">Privacy</a>
       <span class="dot" aria-hidden="true">&middot;</span>
@@ -127,10 +118,10 @@
   </footer>
 
   <script>
-    // Keep the printed year current, and apply each card's single source-of-truth URL.
+    // Keep the printed year current, and apply each row's single source-of-truth URL.
     document.getElementById('year').textContent = new Date().getFullYear();
-    document.querySelectorAll('.card[data-url]').forEach(function (card) {
-      card.setAttribute('href', card.dataset.url);
+    document.querySelectorAll('.game[data-url]').forEach(function (row) {
+      row.setAttribute('href', row.dataset.url);
     });
   </script>
 </body>

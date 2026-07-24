@@ -30,28 +30,27 @@ static server, for example:
 npx serve .
 ```
 
-## What the buttons point at right now
+## What the buttons point at
 
-The domain gamegoodness.com is not bought yet, so the cards link to the real
-deploy URLs the games already have:
+The site is live on gamegoodness.gg and each game has its own subdomain:
 
-| Game                    | Host             | Link used today                                 |
-|-------------------------|------------------|-------------------------------------------------|
-| Milo and the Good Angel | Vercel           | https://goodness-dialogs-game.vercel.app/       |
-| Text Runner             | Cloudflare Pages | https://text-to-game-mvp.pages.dev/             |
-| Snake and Ladder        | Vercel           | https://slides-and-ladders-frontend.vercel.app/ |
+| Game                    | Host             | Link                                      |
+|-------------------------|------------------|-------------------------------------------|
+| Milo and the Good Angel | Vercel           | https://milo7story.gamegoodness.gg/       |
+| Text Runner             | Cloudflare Pages | https://textrunner.gamegoodness.gg/       |
+| Snake and Ladder        | Vercel           | https://laddersandslides.gamegoodness.gg/ |
 
-Heads up: Text Runner sits behind a site password on production. A visitor who
-taps that card today may see a password prompt. That gate is intentional and is
-not touched here.
+Heads up: Text Runner sits behind a site password on production, and its
+Cloudflare custom-domain certificate can take up to 24 hours to activate. Until
+it does, that button will not load. The password gate is intentional and is not
+touched here.
 
 ## Changing a link later
 
 All three links live in one place. Open `index.html`, find the block labelled
-"GAME LINKS - SINGLE SOURCE OF TRUTH", and edit the `data-url` on the card you
-want to change. The whole card is one link and the Play button is inside it, so
-the two can never drift apart. When the domain goes live you swap each `data-url`
-for the matching subdomain. See DEPLOY.md.
+"GAME LINKS - SINGLE SOURCE OF TRUTH", and edit the `data-url` on the row you
+want to change. The whole row is one link and the Play button is inside it, so
+the two can never drift apart. See DEPLOY.md.
 
 ## Files
 
@@ -65,17 +64,11 @@ assets/
   logo.png          the real Game Goodness logo
   og-image.png      1200x630 social preview card (uses the real logo)
   favicon.svg
-  game1-thumb.svg   placeholder art, replace with a real screenshot later
-  game2-thumb.svg   placeholder art
-  game3-thumb.svg   placeholder art
 ```
 
 ## Notes
 
-- The three `gameN-thumb.svg` files are clean brand-coloured placeholders, not
-  real screenshots. Replace them with real screenshots when you have them (keep
-  the same file names and a 16:10 shape, roughly 640x400).
-- Canonical and social (Open Graph) tags point at https://gamegoodness.com/.
-  Until that domain is attached, WhatsApp and Slack previews will not fetch the
-  card image; they start working once the domain is live.
+- The games are shown as a simple list of rows (title, description, Play button),
+  not image tiles, so there are no game thumbnails to maintain.
+- Canonical and social (Open Graph) tags point at https://gamegoodness.gg/.
 - No long dashes (em or en) appear anywhere in this repo. Plain hyphens only.
