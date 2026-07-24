@@ -73,7 +73,7 @@ body {
      cards and text stay readable. Tweak the rgba alphas to taste. */
   background:
     linear-gradient(180deg, rgba(10, 16, 22, 0.72) 0%, rgba(10, 16, 22, 0.82) 100%),
-    url("assets/BG/background.png");
+    url("assets/BG/background_new.png");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
