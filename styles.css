@@ -1,0 +1,219 @@
+/* Game Goodness hub - single stylesheet, no external dependencies.
+   Brand colours sampled from the logo:
+   orange #F37021, blue #0095D0, teal #009789.
+   Note: plain hyphens only, no long dashes anywhere. */
+
+:root {
+  --bg: #F7F5F0;
+  --bg-soft: #FFFFFF;
+  --card: #FFFFFF;
+  --text: #22303A;
+  --muted: #55636D;
+  --border: #E6E0D6;
+  --shadow: 0 6px 20px rgba(31, 45, 56, 0.08);
+  --shadow-hover: 0 12px 30px rgba(31, 45, 56, 0.16);
+
+  --orange: #F37021;
+  --blue: #0095D0;
+  --teal: #009789;
+  /* Darker blue used for filled buttons so white label text meets WCAG AA. */
+  --blue-strong: #006C97;
+  --blue-strong-hover: #005D82;
+  --focus: #0B5FA5;
+
+  --maxw: 1120px;
+  --radius: 16px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0F1720;
+    --bg-soft: #131E28;
+    --card: #18232E;
+    --text: #E9EEF2;
+    --muted: #A7B4BE;
+    --border: #26333F;
+    --shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+    --shadow-hover: 0 12px 30px rgba(0, 0, 0, 0.5);
+    --blue-strong: #1EA6DF;
+    --blue-strong-hover: #45B7E8;
+    --focus: #7CC4EA;
+  }
+}
+
+/* Explicit theme override wins in both directions if a toggle sets data-theme. */
+:root[data-theme="light"] {
+  --bg: #F7F5F0; --bg-soft: #FFFFFF; --card: #FFFFFF; --text: #22303A;
+  --muted: #55636D; --border: #E6E0D6; --blue-strong: #006C97;
+  --blue-strong-hover: #005D82; --focus: #0B5FA5;
+}
+:root[data-theme="dark"] {
+  --bg: #0F1720; --bg-soft: #131E28; --card: #18232E; --text: #E9EEF2;
+  --muted: #A7B4BE; --border: #26333F; --blue-strong: #1EA6DF;
+  --blue-strong-hover: #45B7E8; --focus: #7CC4EA;
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--text);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  display: flex;
+  flex-direction: column;
+}
+
+img { max-width: 100%; display: block; }
+
+a { color: var(--blue-strong); }
+
+.wrap {
+  width: 100%;
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0 20px;
+  flex: 1 0 auto;
+}
+
+/* Header */
+.site-header {
+  text-align: center;
+  padding: 40px 20px 8px;
+}
+.logo {
+  height: auto;
+  width: min(300px, 62vw);
+  margin: 0 auto;
+}
+.tagline {
+  margin: 12px 0 0;
+  color: var(--muted);
+  font-size: 1.05rem;
+}
+
+/* Intro */
+.page-title {
+  text-align: center;
+  font-size: clamp(1.6rem, 4vw, 2.3rem);
+  margin: 28px 0 6px;
+  letter-spacing: -0.01em;
+}
+.page-lead {
+  text-align: center;
+  color: var(--muted);
+  max-width: 42rem;
+  margin: 0 auto 30px;
+}
+
+/* Game grid: 1 column on phones, 2 on tablets, 3 on desktop. */
+.games {
+  list-style: none;
+  margin: 0 0 48px;
+  padding: 0;
+  display: grid;
+  gap: 22px;
+  grid-template-columns: 1fr;
+}
+@media (min-width: 640px) {
+  .games { grid-template-columns: repeat(2, 1fr); }
+}
+@media (min-width: 980px) {
+  .games { grid-template-columns: repeat(3, 1fr); }
+}
+
+/* Card is one big link. The Play button lives inside it. */
+.card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  box-shadow: var(--shadow);
+  transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+}
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-hover);
+  border-color: var(--blue);
+}
+.card:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 3px;
+}
+
+.thumb {
+  display: block;
+  aspect-ratio: 16 / 10;
+  background: var(--bg-soft);
+}
+.thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 18px 18px 20px;
+  flex: 1 0 auto;
+}
+.card-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+.card-desc {
+  color: var(--muted);
+  font-size: 0.98rem;
+  flex: 1 0 auto;
+}
+
+/* Play button, styled as a button but part of the card link. */
+.btn {
+  align-self: flex-start;
+  margin-top: 6px;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  padding: 10px 20px;
+  background: var(--blue-strong);
+  color: #FFFFFF;
+  font-weight: 700;
+  font-size: 1rem;
+  border-radius: 999px;
+  transition: background 0.15s ease;
+}
+.card:hover .btn { background: var(--blue-strong-hover); }
+.btn-arrow { transition: transform 0.15s ease; }
+.card:hover .btn-arrow { transform: translateX(3px); }
+
+/* Footer */
+.site-footer {
+  flex-shrink: 0;
+  text-align: center;
+  padding: 26px 20px 40px;
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+.foot-line { margin: 4px 0; }
+.site-footer a { color: var(--blue-strong); }
+.dot { margin: 0 8px; }
+
+/* Respect reduced-motion preferences. */
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; }
+  .card:hover { transform: none; }
+}

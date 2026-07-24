@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="Game Goodness">
+  <defs>
+    <linearGradient id="fav" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#F37021"/>
+      <stop offset="0.55" stop-color="#0095D0"/>
+      <stop offset="1" stop-color="#009789"/>
+    </linearGradient>
+  </defs>
+  <path d="M32 56 C 6 38 9 16 22 16 C 29 16 32 23 32 27 C 32 23 35 16 42 16 C 55 16 58 38 32 56 Z"
+        fill="url(#fav)"/>
+</svg>
